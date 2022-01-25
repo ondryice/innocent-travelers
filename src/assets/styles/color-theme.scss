@@ -1,0 +1,21 @@
+// Color palette
+$lt-blue:   rgba(79, 178, 238, 1);
+$dk-blue:   rgba(39, 89, 119, 1);
+$lt-teal:   rgba(18, 164, 182, 1);
+$dk-teal:   rgba(16, 84, 86, 1);
+$yellow:    rgba(236, 197, 48, 1);
+$gold:      rgba(250, 210, 58, 1);
+$dk-gold:   rgba(193, 161, 43, 1);
+$dk-orange: rgba(204, 84, 48, 1);
+$pink:      rgba(244, 103, 255, 1);
+$magenta:   rgba(193, 43, 150, 1);
+
+$theme-colors: (
+    'primary': $dk-blue,
+    'secondary': $gold,
+    'tertiary': $pink,
+    'success': $dk-teal,
+    'warning': $yellow,
+    'danger': $dk-orange,
+    'info': $lt-teal
+);
