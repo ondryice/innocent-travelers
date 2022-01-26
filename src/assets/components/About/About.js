@@ -7,7 +7,7 @@ export class About extends React.Component {
 
     render() {
         return (
-            <div className="about-page">
+            <div className="about page">
                 <p>todo: about page</p>
             </div>
         );

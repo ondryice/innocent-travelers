@@ -7,7 +7,7 @@ export class Contact extends React.Component {
 
     render() {
         return (
-            <div className="contact-page">
+            <div className="contact page">
                 <p>todo: contact page</p>
             </div>
         );

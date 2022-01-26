@@ -1,10 +1,45 @@
-@import './color-theme.scss';
+// Color palette
+$lt-blue:   rgba(79, 178, 238, 1);
+$dk-blue:   rgba(39, 89, 119, 1);
+$lt-teal:   rgba(18, 164, 182, 1);
+$dk-teal:   rgba(16, 84, 86, 1);
+$yellow:    rgba(236, 197, 48, 1);
+$gold:      rgba(250, 210, 58, 1);
+$dk-gold:   rgba(193, 161, 43, 1);
+$dk-orange: rgba(204, 84, 48, 1);
+$pink:      rgba(244, 103, 255, 1);
+$magenta:   rgba(193, 43, 150, 1);
+
+$theme-colors: (
+    'primary': $dk-blue,
+    'secondary': $gold,
+    'tertiary': $pink,
+    'success': $dk-teal,
+    'warning': $yellow,
+    'danger': $dk-orange,
+    'info': $lt-teal
+);
+
+@function unfocused($base_color) {
+    @return rgba($base_color, .5);
+}
+
+@import '../../../node_modules/bootstrap/';
 
 // Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,500;1,500&display=swap");
 
 // Global Styles
+
+$navbar-height: 50px;
+@function nb-btn-height() {
+    @return $navbar-height - 8px;
+}
+@function page-padding() {
+    @return $navbar-height + 30px;
+}
+
 * {
     cursor: default;
     font-family: 'Raleway', sans-serif;
@@ -16,7 +51,9 @@ div {
 }
 
 .page {
-    padding: 80px 5vw;
+    padding-top: page-padding();
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .clickable {
@@ -25,15 +62,42 @@ div {
     }
 }
 
-.navbar Container {
-    width: 100vw;
+.navbar-container {
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 5vw;
+    right: 5vw;
+    height: $navbar-height;
+    background-color: unfocused($dk-blue);
+    border-radius: 0px 0px 10px 10px;
+
+    transition: all 300ms ease-in-out;
+    &:hover {
+        background-color: transparentize($color: $dk-blue, $amount: .3);
+    }
 }
 
-.navbar Row {
-    width: 100%;
+.navbar-selected {
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 1%;
+    border-radius: 5px;
+    line-height: nb-btn-height();
+
+    background-color: transparentize($color: $dk-teal, $amount: .5);
 }
 
-.navbar Link {
-    width: 100%;
-    max-width: 33vw;
+.navbar-btn {
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 1%;
+    border-radius: 5px;
+    line-height: nb-btn-height();
+
+    transition: all 300ms ease-in-out;
+    &:hover {
+        cursor: pointer;
+        background-color: transparentize($color: $dk-teal, $amount: .75);
+    }
 }

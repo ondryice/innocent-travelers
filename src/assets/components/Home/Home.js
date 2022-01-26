@@ -8,7 +8,7 @@ export class Home extends React.Component {
 
     render() {
         return (
-            <div className='home-page'>
+            <div className='home page'>
                 <HeroSection />
             </div>
         );
